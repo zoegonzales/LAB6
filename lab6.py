@@ -14,6 +14,14 @@ def password_encoder(password):
         new_pass += str(int(num) + 5)
     return new_pass
 
+def password_decoder(password):
+    decoded_password = ""
+    for digit in password:
+        # Convert the digit to an integer, add 3, and take the remainder divided by 10
+        decoded_digit = str((int(digit) - 3) % 10)
+        decoded_password += decoded_digit
+    return decoded_password
+
 
 while True:
     main()
